@@ -210,4 +210,6 @@ public class MasterActivity extends AppCompatActivity
             replaceFragment(0, HomeFragment.getInstance());
         }
     }
+
+    //Commit Added
 }
