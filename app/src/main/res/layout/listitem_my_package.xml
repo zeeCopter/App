@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:background="@color/colorWhite"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/dateTV"
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:text="23 Jan, 3:00 PM"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/circleIV"
+        android:layout_below="@+id/dateTV"
+        android:layout_width="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/drawable_green_circle"
+        android:layout_height="15dp" />
+    <ImageView
+        android:id="@+id/lineIV"
+        android:layout_width="1dp"
+        android:background="@color/colorGreen"
+        android:layout_marginLeft="17dp"
+        android:layout_below="@id/circleIV"
+        android:layout_height="28dp" />
+    <ImageView
+        android:id="@+id/locationIV"
+        android:layout_below="@+id/lineIV"
+        android:layout_width="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/location_drop_red"
+        android:layout_height="15dp" />
+    <TextView
+        android:id="@+id/dropLocationTV"
+        android:layout_toRightOf="@+id/circleIV"
+        android:layout_below="@+id/dateTV"
+        android:text="Pink Residency Community Park"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/locationTV"
+        android:layout_toRightOf="@+id/circleIV"
+        android:layout_below="@+id/dropLocationTV"
+        android:text="Karachi Sindh Pakistan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/locationIV"
+        android:layout_below="@+id/locationTV"
+        android:layout_marginTop="8dp"
+        android:id="@+id/iGuideTV"
+        android:text="I guided the Captain."
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_below="@+id/dateTV"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:text="PKR 250"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/iGuideTV"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+</RelativeLayout>

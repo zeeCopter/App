@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_above="@+id/lastPannel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/lastPannel"
+        android:background="@color/colorMostLightGrey"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+
+        <RelativeLayout
+            android:id="@+id/bottomPannelTwo"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/colorWhite"
+            android:layout_above="@+id/bottomPannelOne"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="20dp"
+                android:background="@drawable/drawable_green_circle"
+                android:layout_height="20dp" />
+            <ImageView
+                android:layout_width="2dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="35dp"
+                android:background="@color/colorGreen"
+                android:layout_height="30dp" />
+            <ImageView
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="20dp"
+                android:background="@drawable/location_drop_red"
+                android:layout_height="20dp" />
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textStyle="bold"
+                            android:text="Swiss Gold Bangles Collection"
+                            android:textColor="@color/colorBlack"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:singleLine="true"
+                            android:text="Al-Emirates Shopping Mall Bahadurabad Karachi Pakistan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/colorLightGrey"
+                        android:layout_alignParentBottom="true"
+                        android:layout_height="1dp" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:text="Pink Residency Community Park"
+                        android:textColor="@color/colorBlack"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:singleLine="true"
+                        android:text="Karachi Sindh Pakistan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomPannelOne"
+            android:background="@color/colorLightestGrey"
+            android:layout_above="@+id/lineIV"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/cash"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Cash"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/lineIV"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_above="@+id/bottomPannel"
+            android:background="@color/colorLightGrey"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_above="@+id/startBtn"
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/colorLightestGrey"
+            android:id="@+id/bottomPannel"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/fareIV"
+                    android:layout_width="25dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/estimated_fare"
+                    android:layout_height="25dp" />
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_toRightOf="@+id/fareIV"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Fare Estimate"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="PKR 240 - 280"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="1dp"
+                android:background="@color/colorLightGrey"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/promo_code"
+                    android:layout_height="25dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Promo code"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startBtn"
+            android:text="START"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorGrey"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

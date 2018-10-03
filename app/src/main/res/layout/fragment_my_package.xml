@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:gravity="center"
+        android:background="@color/colorGrey"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/scheduleTV"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:text="SCHEDULE"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/historyTV"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:text="HISTORY"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:gravity="center"
+        android:background="@color/colorLightGrey"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/lineOneIV"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp" />
+        <ImageView
+            android:id="@+id/lineTwoIV"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:background="@color/colorLightestGrey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

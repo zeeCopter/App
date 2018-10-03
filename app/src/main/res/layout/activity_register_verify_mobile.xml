@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/backArrowTV"
+        android:layout_width="wrap_content"
+        android:text="BACK"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/firstImageIV"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/verify_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/backArrowTV"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:id="@+id/secondHeadingTV"
+        android:layout_below="@+id/firstImageIV"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Enter the pin you have recieved, via SMS on +923411111111"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/numberPanelLL"
+        android:layout_margin = "10dp"
+        android:layout_below="@+id/secondHeadingTV"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/continueWithFbTV"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorWhite"
+        android:text="Continue"
+        android:background="@color/colorGrey"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

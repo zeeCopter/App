@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorTransparentBlack"
+        android:layout_height="match_parent">
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/aVLoadingIndicatorView"
+            android:visibility="gone"
+            android:layout_width="400dp"
+            android:layout_centerInParent="true"
+            android:layout_height="400dp"
+            app:indicatorName="BallScaleRippleMultipleIndicator"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

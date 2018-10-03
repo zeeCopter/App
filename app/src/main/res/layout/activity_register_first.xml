@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_above ="@+id/continueWithMobileNoBtn"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="Welcome"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/continueWithMobileNoBtn"
+        android:layout_above="@+id/continueWithFbTV"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/colorWhite"
+        android:text="Continue With Mobile Number"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/continueWithFbTV"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Or Continue with Facebook"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

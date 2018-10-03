@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/backArrowTV"
+        android:layout_width="wrap_content"
+        android:text="BACK"
+        android:textColor="@color/colorGrey"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/firstHeadingTV"
+        android:layout_below="@+id/backArrowTV"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorGrey"
+        android:text="What's your email"
+        android:textSize="22sp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/secondHeadingTV"
+        android:layout_below="@+id/firstHeadingTV"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorLightGrey"
+        android:layout_marginTop="5dp"
+        android:text="Enter email address which is associated with your mobile number +923421111111"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/numberPanelLL"
+        android:layout_below="@+id/secondHeadingTV"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorLightGrey"
+            android:text="ENTER EMAIL"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:hint="*********@gmail.com"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/createAccountTV"
+        android:layout_marginLeft="10dp"
+        android:text="or create a new account"
+        android:textColor="@color/colorDarkBlue"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/numberPanelLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorWhite"
+        android:text="Send reset link"
+        android:background="@color/colorGrey"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/topPannelFL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="80dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/aggrement"
+            android:layout_height="80dp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/firstHeadingTV"
+        android:layout_below="@+id/topPannelFL"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:text="By tapping the arrow below, you agree to our Terms of Uses and Privacy Policy"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@+id/firstHeadingTV"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="To learm more, see our Terms and Condition and Privacy Policy "
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/nextBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:layout_width="60dp"
+        android:gravity="center"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:background="@drawable/next_button"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

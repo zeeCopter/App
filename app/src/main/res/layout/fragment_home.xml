@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:id="@+id/topPanel"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="40dp"
+                android:src="@drawable/bike"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Bike"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="40dp"
+                android:src="@drawable/rikshaw"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Rikshaw"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="40dp"
+                android:src="@drawable/car"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Car"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="40dp"
+                android:src="@drawable/truck"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Truck"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_below="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomPannel"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/lastUpperPannel"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/lastPannel"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorWhite"
+                android:layout_marginLeft="10dp"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/searchIV"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:background="@drawable/ic_search"
+                    android:layout_height="30dp" />
+
+                <LinearLayout
+                    android:layout_toRightOf="@+id/searchIV"
+                    android:layout_toLeftOf="@id/rightPannel"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="SWISS GOLD BANGLES COLLECTION"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="8sp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorGrey"
+                        android:text="Al-Emirates Shopping Mall Bahadurabad Karachi Pakistan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rightPannel"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:background="@color/colorLightGrey"
+                        android:layout_height="30dp" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:background="@drawable/ic_star"
+                        android:layout_height="30dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/startBtn"
+                android:text="START"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:background="@color/colorGrey"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lastPannel"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/colorGrey"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:text="Your Captain is 2 mins away!"
+                    android:textColor="@color/colorWhite"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:text="0.4 km"
+                    android:textColor="@color/colorWhite"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <ImageView
+                    android:id="@+id/greenCircleIV"
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/location_drop_gray"
+                    android:layout_height="20dp" />
+                <LinearLayout
+                    android:layout_toRightOf="@+id/greenCircleIV"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:singleLine="true"
+                        android:text="Karachi Sindh Pakistan"
+                        android:textColor="@color/colorGrey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="70dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/user_img"
+                        android:layout_height="50dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/colorGrey"
+                            android:text="Ali Rana"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@drawable/ic_star_filled"
+                                android:layout_height="20dp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@drawable/ic_star_filled"
+                                android:layout_height="20dp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@drawable/ic_star_filled"
+                                android:layout_height="20dp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@drawable/ic_star_filled"
+                                android:layout_height="20dp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@drawable/ic_star_filled"
+                                android:layout_height="20dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:textStyle="bold"
+                                android:text="4.8"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorLightGrey"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="match_parent" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/carColorTV"
+                        android:layout_width="wrap_content"
+                        android:text="Grey"
+                        android:textColor="@color/colorLightGrey"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_below="@+id/carColorTV"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/carModelTV"
+                        android:text="Suzuki, Alto Go"
+                        android:textColor="@color/colorLightGrey"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/carModelTV"
+                        android:textColor="@color/colorGrey"
+                        android:layout_centerHorizontal="true"
+                        android:text="AWT - 789"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="50dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/colorGrey"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:background="@drawable/contact_captain"
+                        android:layout_height="25dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:text="Contact Captain"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/colorGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:background="@drawable/share_tracker"
+                        android:layout_height="25dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:text="Share Tracker"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
