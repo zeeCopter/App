@@ -54,6 +54,7 @@
         <EditText
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
+            android:drawableRight="@drawable/ic_drop_down"
             android:hint="Fragility Value"
             android:layout_height="wrap_content" />
 
@@ -69,10 +70,10 @@
         android:id="@+id/nextBtn"
         android:text="Next"
         android:layout_margin="10dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:background="@color/colorGrey"
+        android:background="@color/colorPrimary"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>

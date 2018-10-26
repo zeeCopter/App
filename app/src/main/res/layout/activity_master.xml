@@ -19,6 +19,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemIconTint="@drawable/menu_selector"
+        app:itemTextColor="@drawable/menu_selector"
         app:headerLayout="@layout/nav_header_master"
         app:menu="@menu/activity_master_drawer">
 
@@ -31,7 +33,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:padding="10dp"
-            android:background="@color/colorGrey"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <ImageView
@@ -41,8 +43,7 @@
             <TextView
                 android:layout_marginLeft="10dp"
                 android:id="@+id/footer_item_1"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Become a captain" />

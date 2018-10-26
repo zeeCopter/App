@@ -35,7 +35,7 @@
             android:layout_height="match_parent">
             <ImageView
                 android:layout_width="40dp"
-                android:src="@drawable/rikshaw"
+                android:src="@drawable/rikhshaw"
                 android:layout_height="40dp" />
             <TextView
                 android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:text="SWISS GOLD BANGLES COLLECTION"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorPrimaryDark"
                         android:textSize="8sp"
                         android:layout_height="wrap_content" />
                     <TextView
@@ -151,10 +151,10 @@
             <Button
                 android:id="@+id/startBtn"
                 android:text="START"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_margin="15dp"
-                android:background="@color/colorGrey"
+                android:background="@color/colorPrimary"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 

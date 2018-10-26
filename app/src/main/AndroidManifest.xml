@@ -66,12 +66,13 @@
             android:screenOrientation="portrait"></activity>
 
         <activity android:name=".FindingYourRideActivity"
+            android:theme="@style/AppThemeNoActionBar"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".MasterActivity"
             android:label="@string/title_activity_master"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/MyMaterialTheme"
             android:screenOrientation="portrait"></activity>
 
         <meta-data
@@ -80,7 +81,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBSk7SkCTmPAZ6r4PCuZ5yDIldI_oAZfCI"/>
+            android:value="AIzaSyAnCt46qn6t7tl4Y71FImJtnzo-yWfLBOg"/>
     </application>
 
 </manifest>

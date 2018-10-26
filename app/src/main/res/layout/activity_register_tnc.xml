@@ -3,12 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/topPannelLL"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_width="18dp"
+            android:background="@drawable/back_arrow"
+            android:layout_marginLeft="15dp"
+            android:layout_height="18dp" />
+        <TextView
+            android:id="@+id/backArrowTV"
+            android:layout_width="wrap_content"
+            android:text="Terms Of Use"
+            android:textSize="22sp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
     <FrameLayout
+        android:layout_below="@+id/topPannelLL"
         android:id="@+id/topPannelFL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:layout_width="80dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/aggrement"

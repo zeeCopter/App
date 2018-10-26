@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
@@ -21,9 +22,13 @@
             android:icon="@drawable/wallet"
             android:title="Wallet" />
         <item
-            android:id="@+id/nav_setting"
-            android:icon="@drawable/settings"
-            android:title="Setting" />
+        android:id="@+id/nav_setting"
+        android:icon="@drawable/settings"
+        android:title="Setting" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
     </group>
 
 </menu>

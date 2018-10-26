@@ -21,7 +21,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:text="Continue With Mobile Number"
         android:background="@color/colorPrimary"
         android:layout_height="wrap_content" />

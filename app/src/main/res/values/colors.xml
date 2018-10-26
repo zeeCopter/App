@@ -13,7 +13,7 @@
     <color name="colorDarkBlue">#303F9F</color>
     <color name="colorLightestGrey">#e5e5e5</color>-->
 
-    <color name="colorPrimary">#cc0033</color>
+    <!--<color name="colorPrimary">#cc0033</color>
     <color name="colorPrimaryDark">#990000</color>
     <color name="colorAccent">#FF4081</color>
 
@@ -27,6 +27,23 @@
     <color name="colorGrey">#333333</color>
     <color name="colorLightGrey">#999999</color>
     <color name="colorMostLightGrey">#f2f2f2</color>
+    <color name="colorLightOffWhite">#fefbf7</color>-->
+
+    <color name="colorPrimary">#ccffff</color>
+    <color name="colorPrimaryDark">#66cccc</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorGreen">#28BC4E</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorTransparentBlack">#80000000</color>
+    <color name="colorDarkBlue">#303F9F</color>
+    <color name="colorLightestGrey">#e5e5e5</color>
+
+    <color name="colorGrey">#333333</color>
+    <color name="colorLightGrey">#999999</color>
+    <color name="colorMostLightGrey">#f2f2f2</color>
     <color name="colorLightOffWhite">#fefbf7</color>
+
 
 </resources>

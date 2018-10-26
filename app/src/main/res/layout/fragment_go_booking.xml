@@ -40,7 +40,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentBottom="true"
                 android:layout_width="20dp"
-                android:background="@drawable/location_drop_red"
+                android:background="@drawable/location_drop"
                 android:layout_height="20dp" />
             <LinearLayout
                 android:layout_marginLeft="40dp"
@@ -188,13 +188,13 @@
         <Button
             android:id="@+id/startBtn"
             android:text="START"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorBlack"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/colorGrey"
+            android:background="@color/colorPrimary"
             android:layout_height="wrap_content" />
     </RelativeLayout>
 

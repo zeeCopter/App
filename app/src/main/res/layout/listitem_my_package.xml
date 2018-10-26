@@ -23,7 +23,7 @@
         android:id="@+id/lineIV"
         android:layout_width="1dp"
         android:background="@color/colorGreen"
-        android:layout_marginLeft="17dp"
+        android:layout_marginLeft="16.5dp"
         android:layout_below="@id/circleIV"
         android:layout_height="28dp" />
     <ImageView
@@ -32,7 +32,7 @@
         android:layout_width="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/location_drop_red"
+        android:background="@drawable/location_drop"
         android:layout_height="15dp" />
     <TextView
         android:id="@+id/dropLocationTV"
@@ -62,7 +62,7 @@
         android:layout_below="@+id/dateTV"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:text="PKR 250"
         android:layout_width="wrap_content"
