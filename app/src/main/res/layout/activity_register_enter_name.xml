@@ -35,29 +35,56 @@
 
     <LinearLayout
         android:id="@+id/numberPanelLL"
-        android:layout_below="@+id/secondHeadingTV"
-        android:layout_marginTop="80dp"
-        android:orientation="vertical"
+        android:layout_centerVertical="true"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/colorLightGrey"
-            android:text="ENTER EMAIL"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/emailET"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:hint="*********@gmail.com"
-            android:textSize="14sp"
-            android:inputType="textEmailAddress"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorLightGrey"
+                android:text="ENTER FIRST NAME"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/firstNameET"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:hint="Zeeshan"
+                android:textSize="14sp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorLightGrey"
+                android:text="ENTER LAST NAME"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/lastNameET"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:hint="Ahmed"
+                android:textSize="14sp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 
     <Button

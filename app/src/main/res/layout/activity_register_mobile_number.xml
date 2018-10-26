@@ -67,9 +67,12 @@
             android:layout_height="30dp" />
 
         <EditText
+            android:id="@+id/numberET"
             android:layout_marginLeft="15dp"
             android:layout_width="match_parent"
             android:background="@null"
+            android:inputType="numberDecimal"
+            android:maxLength="10"
             android:hint="3421234456"
             android:textSize="14sp"
             android:layout_height="30dp" />

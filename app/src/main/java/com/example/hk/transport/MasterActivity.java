@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.hk.transport.Fragments.HomeFragment;
 import com.example.hk.transport.Fragments.HomeSubFragments.GoBookingFragment;
@@ -24,6 +25,7 @@ import com.example.hk.transport.Fragments.MyPackageFragment;
 import com.example.hk.transport.Fragments.NotificationFragment;
 import com.example.hk.transport.Fragments.SettingFragment;
 import com.example.hk.transport.Fragments.WalletFragment;
+import com.example.hk.transport.Utilities.Common;
 
 public class MasterActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,11 +37,13 @@ public class MasterActivity extends AppCompatActivity
     DrawerLayout drawer;
     NavigationView navigationView;
     private boolean mToolBarNavigationListenerIsRegistered = false;
+    TextView nameTV,emailTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -60,6 +64,12 @@ public class MasterActivity extends AppCompatActivity
         lastFragItemSelected = 0;
 
         navigationView.getMenu().getItem(0).setChecked(true);
+
+        nameTV = navigationView.getHeaderView(0).findViewById(R.id.nameTV);
+        nameTV.setText(Common.loginPojo.getFirstName()+" "+Common.loginPojo.getLastName());
+
+        emailTV = navigationView.getHeaderView(0).findViewById(R.id.emailTV);
+        emailTV.setText(Common.loginPojo.getEmailAddress());
     }
 
     @Override

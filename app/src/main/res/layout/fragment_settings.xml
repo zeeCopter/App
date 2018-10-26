@@ -40,6 +40,7 @@
                     android:textStyle="bold"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/nameTV"
                     android:layout_width="match_parent"
                     android:text="Zeeshan Ahmed"
                     android:layout_height="wrap_content" />
@@ -70,6 +71,7 @@
                     android:textStyle="bold"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/mobileNoTV"
                     android:layout_width="match_parent"
                     android:text="+923411111111"
                     android:layout_height="wrap_content" />
@@ -100,6 +102,7 @@
                     android:textStyle="bold"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/emailTV"
                     android:layout_width="match_parent"
                     android:text="zeeshan.ahmed22805@gmail.com"
                     android:layout_height="wrap_content" />
@@ -124,6 +127,7 @@
                 android:orientation="vertical"
                 android:layout_height="40dp">
                 <TextView
+                    android:id="@+id/changePasswordTV"
                     android:layout_width="match_parent"
                     android:text="Change Password"
                     android:textColor="@color/colorBlack"

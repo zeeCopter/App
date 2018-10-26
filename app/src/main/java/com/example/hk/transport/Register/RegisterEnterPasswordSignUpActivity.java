@@ -14,16 +14,17 @@ import com.example.hk.transport.R;
 import com.example.hk.transport.Utilities.APIs.API;
 import com.example.hk.transport.Utilities.Common;
 import com.example.hk.transport.Utilities.Pojos.LoginPojo;
+import com.example.hk.transport.Utilities.Pojos.SignUpPojo;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegisterEnterPasswordActivity extends AppCompatActivity {
+public class RegisterEnterPasswordSignUpActivity extends AppCompatActivity {
 
     Button loginBtn;
     EditText passwordET;
-    TextView createAccountTV,forgotPasswordTV;
+    TextView createAccountTV,forgotPasswordTV,secondHeadingTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,51 +33,43 @@ public class RegisterEnterPasswordActivity extends AppCompatActivity {
 
         loginBtn = findViewById(R.id.loginBtn);
         passwordET = findViewById(R.id.passwordET);
-        passwordET = findViewById(R.id.passwordET);
         createAccountTV = findViewById(R.id.createAccountTV);
         forgotPasswordTV = findViewById(R.id.forgotPasswordTV);
+        secondHeadingTV = findViewById(R.id.secondHeadingTV);
 
-        forgotPasswordTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RegisterEnterPasswordActivity.this,ForgetPasswordActivity.class));
-            }
-        });
+        secondHeadingTV.setText("SIGN UP WITH YOUR PASSWORD");
 
-        createAccountTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RegisterEnterPasswordActivity.this,RegisterEnterEmailSignUpActivity.class));
-            }
-        });
+        createAccountTV.setVisibility(View.GONE);
+        forgotPasswordTV.setVisibility(View.GONE);
+
+        loginBtn.setText("SIGNUP");
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(passwordET.getText().toString().equals(""))
-                    Toast.makeText(RegisterEnterPasswordActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterEnterPasswordSignUpActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                 else
                 {
-                    Common.showProgressDialog(RegisterEnterPasswordActivity.this);
-                    API.getWebServices().login("+92"+Common.registerMobileNumber,passwordET.getText().toString()).enqueue(new Callback<LoginPojo>() {
+                    Common.showProgressDialog(RegisterEnterPasswordSignUpActivity.this);
+                    API.getWebServices().signUp("+92"+Common.registerMobileNumber,passwordET.getText().toString(),Common.registerFirstName,Common.registerLastName,Common.registerEmail).enqueue(new Callback<SignUpPojo>() {
                         @Override
-                        public void onResponse(Call<LoginPojo> call, Response<LoginPojo> response) {
+                        public void onResponse(Call<SignUpPojo> call, Response<SignUpPojo> response) {
                             Common.dismissProgressDialog();
                             if(response.body().getStatus())
                             {
-                                Common.loginPojo = response.body();
-                                startActivity(new Intent(RegisterEnterPasswordActivity.this,MasterActivity.class));
+                                startActivity(new Intent(RegisterEnterPasswordSignUpActivity.this,RegisterEnterPasswordActivity.class));
                             }
                             else
                             {
-                                Toast.makeText(RegisterEnterPasswordActivity.this, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterEnterPasswordSignUpActivity.this, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
 
                         @Override
-                        public void onFailure(Call<LoginPojo> call, Throwable t) {
+                        public void onFailure(Call<SignUpPojo> call, Throwable t) {
                             Common.dismissProgressDialog();
-                            Toast.makeText(RegisterEnterPasswordActivity.this, "Check your internet connection.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterEnterPasswordSignUpActivity.this, "Check your internet connection.", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
