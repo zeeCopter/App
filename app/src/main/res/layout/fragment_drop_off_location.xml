@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:id="@+id/topPanel"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:id="@+id/bikeLL"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/bikeIV"
+                android:layout_width="40dp"
+                android:src="@drawable/bike"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Bike"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/bikeLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/rikshawLL"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/rikshawIV"
+                android:layout_width="40dp"
+                android:src="@drawable/rikhshaw"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Rikshaw"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/rikshawLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/carLL"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/carIV"
+                android:layout_width="40dp"
+                android:src="@drawable/car"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Car"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/carLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/truckLL"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/truckIV"
+                android:layout_width="40dp"
+                android:src="@drawable/truck"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Truck"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/truckLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_below="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomPannel"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/lastUpperPannel"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/lastPannel"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/pickUpLocationRL"
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorWhite"
+                android:layout_marginLeft="10dp"
+                android:layout_height="50dp">
+
+                <LinearLayout
+                    android:layout_toRightOf="@+id/searchIV"
+                    android:layout_toLeftOf="@id/rightPannel"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/pickUpKnownLocationTV"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="8sp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/pickUpaddressTV"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorGrey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dropOffLocationRL"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorWhite"
+                android:layout_marginLeft="10dp"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/searchOneIV"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:background="@drawable/ic_search"
+                    android:layout_height="30dp" />
+
+                <LinearLayout
+                    android:layout_toRightOf="@+id/searchOneIV"
+                    android:layout_toLeftOf="@id/rightPannelOne"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/dropOffAddressTV"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorGrey"
+                        android:text="Enter Dropoff Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rightPannelOne"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:background="@color/colorLightGrey"
+                        android:layout_height="30dp" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:background="@drawable/ic_star"
+                        android:layout_height="30dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/startBtn"
+                android:text="START"
+                android:textColor="@color/colorBlack"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

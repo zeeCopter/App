@@ -14,6 +14,7 @@ import com.example.hk.transport.R;
 import com.example.hk.transport.Utilities.APIs.API;
 import com.example.hk.transport.Utilities.Common;
 import com.example.hk.transport.Utilities.Pojos.LoginPojo;
+import com.example.hk.transport.Utilities.SharePreferencesUtility;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,6 +65,7 @@ public class RegisterEnterPasswordActivity extends AppCompatActivity {
                             Common.dismissProgressDialog();
                             if(response.body().getStatus())
                             {
+                                new SharePreferencesUtility(RegisterEnterPasswordActivity.this).saveLoginModel(response.body());
                                 Common.loginPojo = response.body();
                                 startActivity(new Intent(RegisterEnterPasswordActivity.this,MasterActivity.class));
                             }

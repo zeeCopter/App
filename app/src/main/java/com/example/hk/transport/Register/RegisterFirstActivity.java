@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 
+import com.example.hk.transport.MasterActivity;
+import com.example.hk.transport.Utilities.Common;
+import com.example.hk.transport.Utilities.SharePreferencesUtility;
 import com.google.android.gms.location.LocationListener;
 import android.location.LocationManager;
 
@@ -58,6 +61,12 @@ public class RegisterFirstActivity extends AppCompatActivity {
         if(!isNetworkConnected())
         {
             buildAlertMessageNoInternet();
+        }
+
+        if(!new SharePreferencesUtility(RegisterFirstActivity.this).getLoginModel().getUserId().equals(""))
+        {
+            Common.loginPojo = new SharePreferencesUtility(RegisterFirstActivity.this).getLoginModel();
+            startActivity(new Intent(RegisterFirstActivity.this, MasterActivity.class));
         }
     }
 

@@ -3,7 +3,7 @@ package com.example.hk.transport.Utilities.Pojos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginPojo {
+public class UpdateProfilePojo {
 
     @SerializedName("status")
     @Expose
@@ -23,6 +23,15 @@ public class LoginPojo {
     @SerializedName("emailAddress")
     @Expose
     private String emailAddress;
+    @SerializedName("mobileNumber")
+    @Expose
+    private String mobileNumber;
+    @SerializedName("gender")
+    @Expose
+    private String gender;
+    @SerializedName("dateofBirth")
+    @Expose
+    private String dateofBirth;
     @SerializedName("imageUrl")
     @Expose
     private String imageUrl;
@@ -33,14 +42,6 @@ public class LoginPojo {
 
     public void setStatus(Boolean status) {
         this.status = status;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public String getMessage() {
@@ -81,5 +82,37 @@ public class LoginPojo {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDateofBirth() {
+        return dateofBirth;
+    }
+
+    public void setDateofBirth(String dateofBirth) {
+        this.dateofBirth = dateofBirth;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -10,12 +10,15 @@
         android:id="@+id/topPanel"
         android:layout_height="60dp">
         <LinearLayout
+            android:id="@+id/bikeLL"
+            android:visibility="gone"
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/bikeIV"
                 android:layout_width="40dp"
                 android:src="@drawable/bike"
                 android:layout_height="40dp" />
@@ -24,16 +27,23 @@
                 android:text="Bike"
                 android:layout_height="wrap_content" />
             <ImageView
+                android:visibility="gone"
+                android:id="@+id/bikeLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
                 android:layout_width="match_parent"
-                android:layout_height="2dp" />
+                android:layout_height="1dp" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/rikshawLL"
+            android:visibility="gone"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/rikshawIV"
                 android:layout_width="40dp"
                 android:src="@drawable/rikhshaw"
                 android:layout_height="40dp" />
@@ -41,14 +51,24 @@
                 android:layout_width="wrap_content"
                 android:text="Rikshaw"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/rikshawLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/carLL"
+            android:visibility="gone"
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/carIV"
                 android:layout_width="40dp"
                 android:src="@drawable/car"
                 android:layout_height="40dp" />
@@ -56,14 +76,24 @@
                 android:layout_width="wrap_content"
                 android:text="Car"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/carLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/truckLL"
+            android:visibility="gone"
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/truckIV"
                 android:layout_width="40dp"
                 android:src="@drawable/truck"
                 android:layout_height="40dp" />
@@ -71,6 +101,13 @@
                 android:layout_width="wrap_content"
                 android:text="Truck"
                 android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/truckLineIV"
+                android:background="@color/colorGrey"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -93,6 +130,7 @@
             android:orientation="vertical"
             android:layout_height="wrap_content">
             <RelativeLayout
+                android:id="@+id/pickUpLocationRL"
                 android:layout_width="match_parent"
                 android:layout_marginRight="10dp"
                 android:background="@color/colorWhite"
@@ -115,16 +153,16 @@
                     android:orientation="vertical"
                     android:layout_height="match_parent">
                     <TextView
+                        android:id="@+id/knownLocationTV"
                         android:layout_width="match_parent"
-                        android:text="SWISS GOLD BANGLES COLLECTION"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="8sp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/addressTV"
                         android:singleLine="true"
                         android:textSize="16sp"
                         android:textColor="@color/colorGrey"
-                        android:text="Al-Emirates Shopping Mall Bahadurabad Karachi Pakistan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>

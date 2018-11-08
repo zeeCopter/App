@@ -3,6 +3,7 @@ package com.example.hk.transport.Utilities;
 import android.app.Activity;
 
 import com.example.hk.transport.Utilities.Pojos.LoginPojo;
+import com.example.hk.transport.Utilities.Pojos.ModulePojo;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
 import java.util.regex.Matcher;
@@ -14,6 +15,17 @@ public class Common {
     public static String registerFirstName;
     public static String registerLastName;
     public static String registerEmail;
+
+    public static double pickUpLatitude = 0;
+    public static double dropOffLatitude = 0;
+    public static double pickUpLongitude = 0;
+    public static double dropOffLongitude = 0;
+
+    public static String pickUpAddress = "";
+    public static String dropOffAddress = "";
+    public static String pickUpKnownLocation = "";
+
+    public static ModulePojo modulePojo;
 
     public static LoginPojo loginPojo;
     public static KProgressHUD kProgressHUD;

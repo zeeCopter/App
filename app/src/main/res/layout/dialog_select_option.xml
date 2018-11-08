@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/openCameraBtn"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorBlack"
+        android:text="OPEN CAMERA"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/pickFromGalleryBtn"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorBlack"
+        android:text="PICK FROM GALLERY"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content" />
+</LinearLayout>

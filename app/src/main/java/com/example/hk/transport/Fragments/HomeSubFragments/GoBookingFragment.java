@@ -2,16 +2,17 @@ package com.example.hk.transport.Fragments.HomeSubFragments;
 
 import android.Manifest;
 import android.app.Fragment;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.hk.transport.Fragments.HomeFragment;
+import com.example.hk.transport.FindingYourRideActivity;
+import com.example.hk.transport.Fragments.AddPackageDetailsFragment;
 import com.example.hk.transport.MasterActivity;
 import com.example.hk.transport.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -78,8 +79,8 @@ public class GoBookingFragment extends Fragment{
                 googleMap.setMyLocationEnabled(true);
 
                 // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(-34, 151);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
+                LatLng sydney = new LatLng(24.926294, 67.022095);
+                //googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
 
                 // For zooming automatically to the location of the marker
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(16).build();
@@ -92,7 +93,8 @@ public class GoBookingFragment extends Fragment{
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MasterActivity)getActivity()).changeFragmentWithBack(AddPackageDetailsFragment.getInstance(),7);
+                getActivity().startActivityForResult(new Intent(getActivity(), FindingYourRideActivity.class),1);
+                //((MasterActivity)getActivity()).changeFragmentWithBack(AddPackageDetailsFragment.getInstance(),7);
             }
         });
 

@@ -3,14 +3,9 @@ package com.example.hk.transport;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,13 +17,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.hk.transport.Fragments.HomeFragment;
-import com.example.hk.transport.Fragments.HomeSubFragments.GoBookingFragment;
+import com.example.hk.transport.Fragments.AddPackageDetailsFragment;
+import com.example.hk.transport.Fragments.HomeSubFragments.DropOffLocationFragment;
+import com.example.hk.transport.Fragments.HomeSubFragments.HomeFragment;
 import com.example.hk.transport.Fragments.MyPackageFragment;
 import com.example.hk.transport.Fragments.NotificationFragment;
 import com.example.hk.transport.Fragments.SettingFragment;
 import com.example.hk.transport.Fragments.WalletFragment;
 import com.example.hk.transport.Utilities.Common;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MasterActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,7 +39,8 @@ public class MasterActivity extends AppCompatActivity
     DrawerLayout drawer;
     NavigationView navigationView;
     private boolean mToolBarNavigationListenerIsRegistered = false;
-    TextView nameTV,emailTV;
+    TextView nameTV,editTV;
+    CircleImageView userIV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class MasterActivity extends AppCompatActivity
 
         manager = getFragmentManager();
         transaction = manager.beginTransaction();
-        transaction.replace(R.id.container, HomeFragment.getInstance());
+        transaction.replace(R.id.container, AddPackageDetailsFragment.getInstance());
         transaction.addToBackStack(null);
         transaction.commit();
         lastFragItemSelected = 0;
@@ -73,10 +73,25 @@ public class MasterActivity extends AppCompatActivity
         navigationView.getMenu().getItem(0).setChecked(true);
 
         nameTV = navigationView.getHeaderView(0).findViewById(R.id.nameTV);
-        nameTV.setText(Common.loginPojo.getFirstName()+" "+Common.loginPojo.getLastName());
 
-        emailTV = navigationView.getHeaderView(0).findViewById(R.id.emailTV);
-        emailTV.setText(Common.loginPojo.getEmailAddress());
+        editTV = navigationView.getHeaderView(0).findViewById(R.id.editTV);
+        editTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawers();
+                startActivity(new Intent(MasterActivity.this,EditProfileActivity.class));
+            }
+        });
+
+        userIV = navigationView.getHeaderView(0).findViewById(R.id.userIV);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Picasso.get().load(Common.loginPojo.getImageUrl()).into(userIV);
+        nameTV.setText(Common.loginPojo.getFirstName()+" "+Common.loginPojo.getLastName());
     }
 
     @Override
@@ -119,15 +134,18 @@ public class MasterActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            replaceFragment(0,HomeFragment.getInstance());
+            if(HomeFragment.state == 1)
+                replaceFragment(HomeFragment.getInstance());
+            else
+                replaceFragment(AddPackageDetailsFragment.getInstance());
         } else if (id == R.id.nav_my_package) {
-            replaceFragment(1, MyPackageFragment.getInstance());
+            replaceFragment(MyPackageFragment.getInstance());
         } else if (id == R.id.nav_notification) {
-            replaceFragment(2, NotificationFragment.getInstance());
+            replaceFragment(NotificationFragment.getInstance());
         } else if (id == R.id.nav_wallet) {
-            replaceFragment(3, WalletFragment.getInstance());
+            replaceFragment(WalletFragment.getInstance());
         } else if (id == R.id.nav_setting) {
-            replaceFragment(4, SettingFragment.getInstance());
+            replaceFragment(SettingFragment.getInstance());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -135,21 +153,21 @@ public class MasterActivity extends AppCompatActivity
         return true;
     }
 
-    private void replaceFragment(int fragmentNo,Fragment fragment)
+    private void replaceFragment(Fragment fragment)
     {
-        if(fragmentNo == lastFragItemSelected)
+        /*if(fragmentNo == lastFragItemSelected)
         {
             return;
         }
         else
-        {
+        {*/
             enableViews(false);
             transaction = manager.beginTransaction();
             transaction.replace(R.id.container, fragment);
             transaction.addToBackStack(null);
             transaction.commit();
-            lastFragItemSelected = fragmentNo;
-        }
+            //lastFragItemSelected = fragmentNo;
+        //}
     }
 
     public void changeTitle(String title)
@@ -165,8 +183,11 @@ public class MasterActivity extends AppCompatActivity
         transaction.commit();
 
         lastFragItemSelected = fragmentNumber;
-        //6 for GoBookingFragment
-        //7 for AddPackageDetailFragment
+        //6 for HomeFragment
+        //7 for GoBookingFragment
+        //8 for EnterPickUpLocationFragment
+        //9 for DropOffLocationFragment
+        //10 for EnterDropOffLocationFragment
         enableViews(true);
     }
 
@@ -192,11 +213,24 @@ public class MasterActivity extends AppCompatActivity
                     public void onClick(View v) {
                         if(lastFragItemSelected == 6)
                         {
-                            replaceFragment(0,HomeFragment.getInstance());
+                            replaceFragment(AddPackageDetailsFragment.getInstance());
+                            //replaceFragment(0,HomeFragment.getInstance());
                         }
                         else if(lastFragItemSelected == 7)
                         {
-                            changeFragmentWithBack(GoBookingFragment.getInstance(),6);
+                            changeFragmentWithBack(DropOffLocationFragment.getInstance(),9);
+                        }
+                        else if(lastFragItemSelected == 8)
+                        {
+                            changeFragmentWithBack(HomeFragment.getInstance(),7);
+                        }
+                        else if(lastFragItemSelected == 9)
+                        {
+                            changeFragmentWithBack(HomeFragment.getInstance(),7);
+                        }
+                        else if(lastFragItemSelected == 10)
+                        {
+                            changeFragmentWithBack(DropOffLocationFragment.getInstance(),9);
                         }
                     }
                 });
@@ -224,7 +258,7 @@ public class MasterActivity extends AppCompatActivity
         if(requestCode == 1)
         {
             HomeFragment.state = 1;
-            replaceFragment(0, HomeFragment.getInstance());
+            replaceFragment(HomeFragment.getInstance());
         }
     }
 
