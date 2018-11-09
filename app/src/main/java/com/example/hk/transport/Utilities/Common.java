@@ -26,6 +26,7 @@ public class Common {
     public static String pickUpKnownLocation = "";
 
     public static ModulePojo modulePojo;
+    public static int selectedModuleId = 0;
 
     public static LoginPojo loginPojo;
     public static KProgressHUD kProgressHUD;

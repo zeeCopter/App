@@ -40,11 +40,13 @@
             android:weightSum="2"
             android:layout_height="wrap_content">
             <EditText
+                android:id="@+id/weightET"
                 android:layout_weight="1"
                 android:hint="Weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <EditText
+                android:id="@+id/dimensionET"
                 android:layout_weight="1"
                 android:hint="Dimension"
                 android:layout_width="match_parent"

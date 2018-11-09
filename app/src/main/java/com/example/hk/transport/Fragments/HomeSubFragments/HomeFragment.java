@@ -208,7 +208,14 @@ public class HomeFragment extends Fragment {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MasterActivity)getActivity()).changeFragmentWithBack(DropOffLocationFragment.getInstance(),9);
+                if(Common.pickUpLatitude == 0.0 || Common.pickUpLatitude == 0)
+                {
+                    Toast.makeText(getActivity(),"Select PickUp Location",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    ((MasterActivity)getActivity()).changeFragmentWithBack(DropOffLocationFragment.getInstance(),9);
+                }
             }
         });
 
@@ -232,6 +239,187 @@ public class HomeFragment extends Fragment {
         }
 
         getModule();
+
+        bikeLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(int i = 0 ; i < Common.modulePojo.getData().size() ; i++)
+                {
+                    if(Common.modulePojo.getData().get(i).getModuleName().equals("Bike"))
+                    {
+                        if(Common.modulePojo.getData().get(i).getIsEnable())
+                        {
+                            bikeIV.setImageResource(android.R.color.transparent);
+                            bikeIV.setBackground(getActivity().getResources().getDrawable(R.drawable.bike));
+                            bikeLineIV.setVisibility(View.VISIBLE);
+                            Common.selectedModuleId = Common.modulePojo.getData().get(i).getModuleId();
+
+                            carLineIV.setVisibility(View.GONE);
+                            rikshawLineIV.setVisibility(View.GONE);
+                            truckLineIV.setVisibility(View.GONE);
+
+                            for(int j = 0 ; j < Common.modulePojo.getData().size() ; j++)
+                            {
+                                if(Common.modulePojo.getData().get(j).getModuleName().equals("Rikshaw"))
+                                {
+                                    rikshawIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(rikshawIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Car"))
+                                {
+                                    carIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(carIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Truck"))
+                                {
+                                    truckIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(truckIV);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(getActivity(),"This Module is nor Enable",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+        });
+        rikshawLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(int i = 0 ; i < Common.modulePojo.getData().size() ; i++)
+                {
+                    if(Common.modulePojo.getData().get(i).getModuleName().equals("Rikshaw"))
+                    {
+                        if(Common.modulePojo.getData().get(i).getIsEnable())
+                        {
+                            rikshawIV.setImageResource(android.R.color.transparent);
+                            rikshawIV.setBackground(getActivity().getResources().getDrawable(R.drawable.rikhshaw));
+                            rikshawLineIV.setVisibility(View.VISIBLE);
+                            Common.selectedModuleId = Common.modulePojo.getData().get(i).getModuleId();
+
+                            carLineIV.setVisibility(View.GONE);
+                            bikeLineIV.setVisibility(View.GONE);
+                            truckLineIV.setVisibility(View.GONE);
+
+                            for(int j = 0 ; j < Common.modulePojo.getData().size() ; j++)
+                            {
+                                if(Common.modulePojo.getData().get(j).getModuleName().equals("Bike"))
+                                {
+                                    bikeIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(bikeIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Car"))
+                                {
+                                    carIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(carIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Truck"))
+                                {
+                                    truckIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(truckIV);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(getActivity(),"This Module is nor Enable",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+        });
+        carLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(int i = 0 ; i < Common.modulePojo.getData().size() ; i++)
+                {
+                    if(Common.modulePojo.getData().get(i).getModuleName().equals("Car"))
+                    {
+                        if(Common.modulePojo.getData().get(i).getIsEnable())
+                        {
+                            carIV.setImageResource(android.R.color.transparent);
+                            carIV.setBackground(getActivity().getResources().getDrawable(R.drawable.car));
+                            carLineIV.setVisibility(View.VISIBLE);
+                            Common.selectedModuleId = Common.modulePojo.getData().get(i).getModuleId();
+
+                            rikshawLineIV.setVisibility(View.GONE);
+                            bikeLineIV.setVisibility(View.GONE);
+                            truckLineIV.setVisibility(View.GONE);
+
+                            for(int j = 0 ; j < Common.modulePojo.getData().size() ; j++)
+                            {
+                                if(Common.modulePojo.getData().get(j).getModuleName().equals("Bike"))
+                                {
+                                    bikeIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(bikeIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Rikshaw"))
+                                {
+                                    rikshawIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(rikshawIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Truck"))
+                                {
+                                    truckIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(truckIV);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(getActivity(),"This Module is nor Enable",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+        });
+        truckLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(int i = 0 ; i < Common.modulePojo.getData().size() ; i++)
+                {
+                    if(Common.modulePojo.getData().get(i).getModuleName().equals("Truck"))
+                    {
+                        if(Common.modulePojo.getData().get(i).getIsEnable())
+                        {
+                            truckIV.setImageResource(android.R.color.transparent);
+                            truckIV.setBackground(getActivity().getResources().getDrawable(R.drawable.truck));
+                            truckLineIV.setVisibility(View.VISIBLE);
+                            Common.selectedModuleId = Common.modulePojo.getData().get(i).getModuleId();
+
+                            rikshawLineIV.setVisibility(View.GONE);
+                            bikeLineIV.setVisibility(View.GONE);
+                            carLineIV.setVisibility(View.GONE);
+
+                            for(int j = 0 ; j < Common.modulePojo.getData().size() ; j++)
+                            {
+                                if(Common.modulePojo.getData().get(j).getModuleName().equals("Bike"))
+                                {
+                                    bikeIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(bikeIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Rikshaw"))
+                                {
+                                    rikshawIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(rikshawIV);
+                                }
+                                else if(Common.modulePojo.getData().get(j).getModuleName().equals("Car"))
+                                {
+                                    carIV.setImageResource(android.R.color.transparent);
+                                    Picasso.get().load(Common.modulePojo.getData().get(j).getModuleImage()).into(carIV);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(getActivity(),"This Module is nor Enable",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -263,51 +451,30 @@ public class HomeFragment extends Fragment {
 
     private void getModule()
     {
-        Common.showProgressDialog(getActivity());
-        API.getWebServices().getModule(4,22).enqueue(new Callback<ModulePojo>() {
-            @Override
-            public void onResponse(Call<ModulePojo> call, Response<ModulePojo> response) {
-                Common.dismissProgressDialog();
-                if(response.body().getStatus())
-                {
-                    Common.modulePojo = response.body();
-                    if(response.body().getData() != null && response.body().getData().size() > 0)
-                    for(int i = 0 ; i < response.body().getData().size() ; i++)
+                    if(Common.modulePojo.getData() != null && Common.modulePojo.getData().size() > 0)
+                    for(int i = 0 ; i < Common.modulePojo.getData().size() ; i++)
                     {
-                        if(response.body().getData().get(i).getModuleName().equals("Bike"))
+                        if(Common.modulePojo.getData().get(i).getModuleName().equals("Bike"))
                         {
                             bikeLL.setVisibility(View.VISIBLE);
-                            Picasso.get().load(response.body().getData().get(i).getModuleImage()).into(bikeIV);
+                            Picasso.get().load(Common.modulePojo.getData().get(i).getModuleImage()).into(bikeIV);
                         }
-                        else if(response.body().getData().get(i).getModuleName().equals("Rikshaw"))
+                        else if(Common.modulePojo.getData().get(i).getModuleName().equals("Rikshaw"))
                         {
                             rikshawLL.setVisibility(View.VISIBLE);
-                            Picasso.get().load(response.body().getData().get(i).getModuleImage()).into(rikshawIV);
+                            Picasso.get().load(Common.modulePojo.getData().get(i).getModuleImage()).into(rikshawIV);
                         }
-                        else if(response.body().getData().get(i).getModuleName().equals("Car"))
+                        else if(Common.modulePojo.getData().get(i).getModuleName().equals("Car"))
                         {
                             carLL.setVisibility(View.VISIBLE);
-                            Picasso.get().load(response.body().getData().get(i).getModuleImage()).into(carIV);
+                            Picasso.get().load(Common.modulePojo.getData().get(i).getModuleImage()).into(carIV);
                         }
-                        else if(response.body().getData().get(i).getModuleName().equals("Truck"))
+                        else if(Common.modulePojo.getData().get(i).getModuleName().equals("Truck"))
                         {
                             truckLL.setVisibility(View.VISIBLE);
-                            Picasso.get().load(response.body().getData().get(i).getModuleImage()).into(truckIV);
+                            Picasso.get().load(Common.modulePojo.getData().get(i).getModuleImage()).into(truckIV);
                         }
                     }
-                }
-                else
-                {
-                    Toast.makeText(getActivity(), "Check your internet connection.", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ModulePojo> call, Throwable t) {
-                Common.dismissProgressDialog();
-                Toast.makeText(getActivity(), "Check your internet connection.", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void getCurrentLocation()
